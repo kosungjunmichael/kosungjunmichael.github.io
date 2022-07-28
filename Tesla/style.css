@@ -1,0 +1,329 @@
+@font-face {
+  font-family: 'gothamssm.woff2';
+  src: url(./Fonts/GothamSSm-Book_Web.woff2);
+}
+
+@font-face {
+  font-family: 'gothamssmmed.woff2';
+  src: url(./Fonts/GothamSSm-Medium_Web.woff2);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+}
+
+
+* {
+  margin: none;
+  text-decoration: none;
+  font-family: 'gothamssm.woff2';
+  color: black;
+}
+
+/*                    Headline                     */
+
+header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+}
+
+
+/*                    Headline                     */
+
+header #headline {
+  width: 100%;
+  height: 20px;
+  padding: 16px 0px 16px 0px ;
+  background-color: white;
+  text-align: center;
+}
+
+#headline a {
+  border-bottom: 2px solid black;
+  padding-bottom: 1px;
+  font-size: 14px;
+}
+
+
+
+/*                    Top Tabs                     */
+
+div#toptabs {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0,0,0,0);
+  z-index: 1;
+}
+
+/* Left Logo */
+
+.logo img {
+  color: rgb(23,26,32);
+  width: 100px;
+  height: 12.24px;
+  padding-left:100px;
+  padding: 22px;
+}
+
+div.logo {
+  width: 250px;
+  height: auto;
+} 
+
+/* Middle Menu */
+
+div.midmenu {
+  width: 700px;
+  height: 40px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+div.midmenu a{
+  font-size: 14px;
+  margin: 0px 10px;
+}
+
+div.midmenu a:hover{
+  background-color: rgba(205, 190, 190, 0.5);
+  background-size:auto auto;
+}
+
+/* Right Menu */
+
+div.rightmenu {
+  width: 250px;
+  height: auto;
+  margin: 20.5px 0px;
+  text-align: center;
+  display: flex;
+}
+
+div.rightmenu a,p{
+  font-size: 14px;
+  margin: 0px 10px;
+}
+
+
+/* Menu */
+
+
+#dropmenu #menubutton {
+  position: relative;
+  text-align: left;
+}
+
+#dropmenu .menulist {
+  width: 200px;
+  height: 800px;
+  background-color: white;
+  position: absolute;
+  margin-left: -100px;
+  list-style: none;
+  transform: translateX(300px);
+  transition: all 1s 1s ease;
+  opacity: 0%;
+}
+
+.menulist li{
+  text-align: left;
+  margin-top: 30px;
+}
+
+#menubutton:hover ~ .menulist {
+  transform: translateX(0px);
+  opacity: 100%;
+}
+
+
+/*                    Buttons                     */
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  top: 80%;
+  /* left: 35%;
+  width: 552px; */
+  width: 100%;
+  height: 40px;
+}
+
+#buttons a {
+  font-size: 12px;
+  font-weight: 500px;
+  text-transform: capitalize;
+  margin: 0 15px;
+  padding: 10px 65px;
+  border-radius: 20px;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.custom {
+  background-color: rgba(23, 26, 32, 0.8);
+  color: white;
+}
+
+.inventory {
+  background-color: rgba(244, 244, 244, 0.65);
+  color: rgb(57, 60, 65);
+}
+
+/*                    Chevron                     */
+
+
+
+#chev {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 30px;
+  width: 100%;
+  animation: bounce 2s 0s ease infinite;
+}
+
+#chev .cont {
+  top: 300px;
+  z-index: 1;
+}
+
+
+/*                    Products                     */
+
+
+section {
+  background-position: center;
+  background-repeat:no-repeat;
+  min-height: fit-content;
+  height: 100vh;
+}
+
+.page {
+  scroll-snap-align: center;
+}
+
+/*                    Title Stuff                     */
+
+
+
+div#title {
+  position: absolute;
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  top: 90px;
+}
+
+#title h1 {
+  font-size: 40px;
+}
+
+section div.desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+}
+
+div.desc a {
+  border-bottom: 2px solid black;
+}
+
+
+/*                    Model 3                     */
+
+div.page.model3 {
+  position: relative;
+  background-image: url(./M3-Homepage-Desktop-LHD.jfif);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+
+/*                    Model y                     */
+
+div.page.modely {
+  position: relative;
+  background-image: url(./Desktop-ModelY.jfif);
+  background-size: 100% auto;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/*                    Model s                     */
+
+div.page.models {
+  position: relative;
+  background-image: url(./Homepage-Model-S-Desktop-LHD.jfif);
+  background-size: 100% auto;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/*                    Model x                     */
+
+div.page.modelx {
+  position: relative;
+  background-image: url(./Homepage-Model-X-Desktop-LHD.jfif);
+  background-size: 100% auto;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/*                    Solar Panel                     */
+
+div.page.solarpanel {
+  position: relative;
+  background-image: url(./_25-HP-SolarPanels-D.jfif);
+  background-size: 100% auto;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/*                    Solar Roof                     */
+
+div.page.solarroof {
+  position: relative;
+  background-image: url(./HP-SR-Design-D.jfif);
+  background-size: 100% auto;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+@keyframes bounce {
+  0% {
+    bottom: 0;
+  }
+
+  50% {
+    bottom: -10px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}

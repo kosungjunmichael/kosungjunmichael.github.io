@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Added Montserrat font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Fixed header with Logo -->
+    <header>
+      <div>
+        <a href="https://www.nespresso.com/fr/en/" target="_blank">
+          <img
+            src="https://www.nespresso.com/ecom/medias/sys_master/public/10698362454046/logo-white.svg"
+            alt="Nespresso Logo"
+          />
+        </a>
+      </div>
+    </header>
+    <!-- This is just for the Scroll-to-Top feature -->
+    <div id="pageTop"></div>
+    <!-- Main Section with Form -->
+    <main>
+      <div id="topInfo">
+        <h3>Already a <i>Nespresso</i> customer ?</h3>
+        <div>
+          <p>
+            Select "Yes" for the question "Have you ever bought Nespresso coffee
+            ?"
+          </p>
+          <p>Indicate your client number & postal code</p>
+        </div>
+        <p>Then you can continuously benefit from the rewards program.</p>
+      </div>
+      <!-- Form -->
+      <form method="get" action="" novalidate>
+        <div class="formContainer formTop">
+          <br />
+          <div class="instructionsContainer">
+            <p><b>Have you placed an online order before?</b></p>
+            <p>
+              Then you already have an online account and you can log in
+              <a
+                href="https://www.nespresso.com/fr/en/secure/login"
+                target="_blank"
+                >here</a
+              >.
+            </p>
+            <p>
+              If not, you can activate your online account below and place your
+              first online order.
+            </p>
+          </div>
+
+          <!-- Reorganized the Inputs and Labels in order to handle mobile Media Query -->
+          <div class="inputRow">
+            <div class="inputContainer">
+              <input
+                type="text"
+                name="firstname"
+                id="firstname"
+                maxlength="20"
+                minlength="1"
+                required
+              />
+              <label class="required" for="firstname">First name &nbsp;*</label>
+            </div>
+            <span class="error">All fields with an * are mandatory.</span>
+          </div>
+          <div class="inputRow">
+            <div class="inputContainer">
+              <input
+                type="text"
+                name="lastname"
+                id="lastname"
+                minlength="1"
+                minlength="1"
+                required
+              />
+              <label class="required" for="lastname">Last name &nbsp;*</label>
+            </div>
+            <span class="error">All fields with an * are mandatory.</span>
+          </div>
+          <div class="inputRow">
+            <div class="inputContainer">
+              <input type="text" name="mail" id="mail" minlength="1" required />
+              <label class="required" for="mail">Email address &nbsp;*</label>
+            </div>
+            <span class="error">All fields with an * are mandatory.</span>
+          </div>
+          <div class="pwdContainer inputRow">
+            <div class="inputContainer">
+              <input
+                type="password"
+                name="pwd"
+                id="pwd"
+                minlength="1"
+                required
+              />
+              <label class="required" for="pwd">Password &nbsp;*</label>
+              <div class="tooltip">
+                <div class="arrow-left"></div>
+                <p>Password must:</p>
+                <ul>
+                  <li>Have at least 8 characters</li>
+                  <li>Contain a number</li>
+                  <li>Contain a capital letter</li>
+                </ul>
+              </div>
+            </div>
+            <span class="error">All fields with an * are mandatory.</span>
+            <span class="error"
+              >You have to include capital letters, numbers and do not use your
+              previous passwords.</span
+            >
+          </div>
+        </div>
+        <div class="formContainer formMid">NESPRESSO CLUB MEMBERSHIP</div>
+        <div class="formContainer formMembership">
+          <div>
+            <input type="radio" name="membership" id="no" value="no" checked />
+            <label for="no"
+              >No, i do not have a <i>Nespresso</i> Club membership
+              number.</label
+            >
+            <br />
+            <input type="radio" name="membership" id="yes" value="yes" />
+            <label for="no"
+              >Yes, i have a <i>Nespresso</i> Club membership number.</label
+            >
+            <div class="membershipDetails">
+              <div class="membershipDetailsInner">
+                <div class="membershipRow">
+                  <div class="membershipInputContainer">
+                    <input type="text" name="memberNb" id="memberNb" required />
+                    <label class="required" for="memberNb"
+                      >MemberShip number *</label
+                    >
+                  </div>
+                  <a href="#">Where can you find your membership number ? ></a>
+                  <span class="error">All fields with an * are mandatory.</span>
+                </div>
+                <div class="membershipRow">
+                  <div class="membershipInputContainer">
+                    <input type="text" name="zipCode" id="zipCode" required />
+                    <label class="required" for="zipCode"
+                      >My postal Code *</label
+                    >
+                  </div>
+                  <span class="error">All fields with an * are mandatory.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="formContainer formBottom">
+          <p>
+            By clicking on "Continue", you acknowledge having read
+            <i>Nespresso</i>
+            <a href="https://www.nespresso.com/fr/en/legal" target="_blank">
+              Privacy Notice</a
+            >
+            <span class="error" id="finalError"
+              >The highlighted fields must be corrected before going
+              further.</span
+            >
+          </p>
+          <button type="submit">Continue <span>></span></button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="footerGrayBG">
+        <div class="langSelect">
+          <img
+            src="https://www.nespresso.com/_ui/img/flags/fr.png?impolicy=small&imwidth=48"
+            alt="French flag"
+          />
+          <select name="language" id="language">
+            <option value="saab">Français</option>
+            <option value="volvo" selected>English</option>
+          </select>
+        </div>
+        <div class="linksContainer">
+          <nav class="navLinks linksTop">
+            <a
+              href="https://www.nespresso.com/fr/en/service-customer-care"
+              target="_blank"
+              >Contact</a
+            >
+            |
+            <a
+              href="https://www.nespresso.com/boutiques-fr/nous-trouver"
+              target="_blank"
+              >Store Locator</a
+            >
+            |
+            <a href="https://www.nespresso.com/evenements/" target="_blank"
+              >Events</a
+            >
+            |
+            <a
+              href="https://www.nestle.fr/jobs/search-jobs?keyword=&country=&location=France&career_area=All&company=4441"
+              target="_blank"
+              >Careers</a
+            >
+            |
+            <a href="https://www.nespresso.com/fr/en/presse" target="_blank"
+              >Press Room</a
+            >
+            |
+            <a href="https://www.nespresso.com/entreprise/" target="_blank"
+              >Enterprise Durable</a
+            >
+          </nav>
+          <nav class="navLinks linksBottom">
+            <a href="https://www.nespresso.com/fr/en/legal" target="_blank"
+              >Legal</a
+            >
+            |
+            <a
+              href="https://www.nespresso.com/shared_res/nc2/docs/FR_NESPRESSO_Charte_concurrence_libre_et_loyale_EN.pdf"
+              target="_blank"
+              >Code of Antitrust</a
+            >
+            |
+            <a
+              href="https://www.nespresso.com/ecom/medias/sys_master/public/10341599871006/Communications-techniques-Contact-BV-EN.pdf"
+              target="_blank"
+              >Technical Communication</a
+            >
+            |
+            <a
+              href="https://www.nespresso.com/ecom/medias/sys_master/public/13628548612126/NESPRESSO-FORMULAIRE-RETRACTATION.pdf?"
+              target="_blank"
+              >Cancellation</a
+            >
+            |
+            <a href="https://www.nespresso.com/fr/en/cookies" target="_blank"
+              >Cookies</a
+            >
+            |
+            <a href="https://www.nespresso.com/fr/en/glossary" target="_blank"
+              >Glossary</a
+            >
+            |
+            <a
+              href="https://www.nespresso.com/fr/en/plan-du-site"
+              target="_blank"
+              >Sitemap</a
+            >
+          </nav>
+        </div>
+      </div>
+      <div class="footerBottom">
+        <div class="social">
+          <p>Follow <i>Nespresso</i> on</p>
+          <div class="socialIcons">
+            <a href="https://www.facebook.com/Nespresso.FR" target="_blank"
+              ><img
+                src="https://www.nespresso.com/ecom/medias/sys_master/public/10506387456030/facebook.svg?impolicy=small&imwidth=60"
+                alt="facebook icon"
+            /></a>
+            <a href="https://twitter.com/NespressoFR" target="_blank"
+              ><img
+                src="https://www.nespresso.com/ecom/medias/sys_master/public/10506387587102/twitter.svg?impolicy=small&imwidth=60"
+                alt="twitter icon"
+            /></a>
+            <a href="https://www.instagram.com/nespresso.fr/" target="_blank"
+              ><img
+                src="https://www.nespresso.com/ecom/medias/sys_master/public/10694999506974/insta.svg?impolicy=small&imwidth=60"
+                alt="instagram icon"
+            /></a>
+          </div>
+        </div>
+        <div class="goPageTop">
+          <a href="#pageTop">Top of the page</a>
+          <div class="arrow">^</div>
+        </div>
+        <div class="copyright">
+          <a href="https://www.nespresso.com/fr/en/" target="_blank"
+            ><img
+              src="https://www.nespresso.com/ecom/medias/sys_master/public/10506387390494/logo-white.svg?impolicy=small&imwidth=110"
+              alt="Nespresso logo"
+          /></a>
+          <i>Nespresso</i> S.A. 2017
+        </div>
+      </div>
+    </footer>
+    <script src="errorSubmit.js"></script>
+  </body>
+</html>

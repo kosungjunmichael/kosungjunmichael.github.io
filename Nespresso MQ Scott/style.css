@@ -1,0 +1,645 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode",
+    "Lucida Sans", Tahoma, sans-serif;
+  color: #1b1b1b;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+p {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+label {
+  font-size: 12px;
+}
+
+a {
+  color: #986f38;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------- */
+/* -- Fixed Header with Logo -- */
+/* ---------------------------- */
+
+header {
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  z-index: 1;
+}
+
+header > div {
+  width: 996px;
+  margin: 0 auto;
+}
+
+header img {
+  width: 157px;
+}
+
+@media screen and (max-width: 996px) {
+  header {
+    width: 100%;
+    height: 50px;
+    background-color: #1b1b1b;
+  }
+
+  header > div {
+    width: 90%;
+    margin: auto 0 auto 15px;
+  }
+
+  header img {
+    width: 105px;
+  }
+}
+/* ---------------------------- */
+/* -- Main Section with Form -- */
+/* ---------------------------- */
+
+main {
+  width: 996px;
+  margin: 130px auto 20px auto;
+}
+
+@media screen and (max-width: 996px) {
+  main {
+    width: 100%;
+    margin: 80px auto 20px auto;
+  }
+}
+
+#pageTop {
+  position: absolute;
+  top: 0;
+}
+
+#topInfo {
+  height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #f9f9f9;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  color: #656565;
+}
+
+/* ---------------------------- */
+/* ----------- Form ----------- */
+/* ---------------------------- */
+
+form {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+}
+
+.instructionsContainer {
+  color: #656565;
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 210px;
+  height: 47px;
+  padding: 10px 6px;
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 996px) {
+  input[type="text"],
+  input[type="password"] {
+    width: 50%;
+  }
+}
+
+.formTop label {
+  display: inline-block;
+  width: 162px;
+}
+
+.inputRow {
+  /* MODIFIED */
+  /* display: flex; */
+  /* align-items: center; */
+  margin-bottom: 14px;
+}
+
+.inputRow label {
+  align-self: flex-start;
+  margin-top: 17px;
+  /* MODIFIED */
+  order: -1;
+}
+
+.inputContainer {
+  display: flex;
+  /* flex-direction: column; */
+  /* MODIFIED */
+}
+
+@media screen and (max-width: 996px) {
+  .inputRow label {
+    width: 35%;
+  }
+  .inputContainer {
+    flex: 1;
+  }
+}
+
+.formContainer {
+  padding: 20px;
+}
+
+.pwdContainer {
+  position: relative;
+  width: 380px;
+}
+
+@media screen and (max-width: 996px) {
+  .pwdContainer {
+    width: inherit;
+  }
+}
+
+.inputContainer:focus-within .tooltip {
+  visibility: visible;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  right: -125px;
+  top: -3px;
+  height: 143px;
+  width: 120px;
+  padding: 4px 10px;
+  background-color: #000;
+  font-size: 12px;
+  color: #fff;
+}
+
+@media screen and (max-width: 996px) {
+  .tooltip {
+    right: -15px;
+    top: -3px;
+  }
+}
+
+.arrow-left {
+  position: absolute;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #000;
+}
+
+ul {
+  margin-left: 10px;
+  letter-spacing: normal;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.formMid {
+  height: 78px;
+  padding: 0 20px;
+  width: 100%;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.membershipDetails {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+#yes:checked ~ .membershipDetails {
+  /* MODIFIED */
+  max-height: 200px;
+}
+
+.membershipDetailsInner {
+  padding: 20px 25px;
+}
+
+.membershipRow {
+  /* MODIFIED */
+  /* display: flex; */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.membershipRow label {
+  width: 325px;
+  /* MODIFIED */
+  order: -1;
+}
+
+.membershipRow input {
+  width: 424px;
+  margin-bottom: 0;
+}
+
+.membershipInputContainer {
+  display: flex;
+  flex-direction: row;
+  /* MODIFIED */
+  align-items: center;
+}
+
+.membershipRow a,
+.membershipRow span.error {
+  /* NEW */
+  margin-left: 325px;
+}
+
+@media screen and (max-width: 996px) {
+  .membershipRow label {
+    width: 35%;
+  }
+
+  .membershipRow input {
+    width: 53%;
+  }
+
+  .membershipRow a,
+  .membershipRow span.error {
+    margin-left: 35%;
+  }
+}
+
+.formBottom {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.formBottom button {
+  background-color: #3d8705;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  width: 198px;
+  height: 42px;
+  padding: 0 15px 0 50px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .formBottom button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 15px 0 45%;
+  }
+}
+
+/* ---------------------------- */
+/* ---- Footer with Links ----- */
+/* ---------------------------- */
+
+.footerGrayBG {
+  background-color: #1b1b1b;
+  width: 996px;
+  height: 68px;
+  margin: 20px auto 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 996px) {
+  .footerGrayBG {
+    width: 768px;
+    height: 134px;
+    margin: 20px auto 10px auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerGrayBG {
+    width: 100%;
+    height: 540px;
+  }
+}
+
+.langSelect {
+  display: flex;
+  justify-content: space-between;
+}
+
+.langSelect img {
+  margin: auto 10px auto 0;
+}
+
+.langSelect select {
+  width: 110px;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.linksContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 996px) {
+  .linksContainer {
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .linksContainer {
+    align-self: flex-start;
+    align-items: initial;
+  }
+}
+
+.linksContainer .navLinks {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .linksContainer .navLinks {
+    display: flex;
+    flex-direction: column;
+    color: #1b1b1b;
+  }
+}
+
+.navLinks a {
+  text-transform: uppercase;
+}
+
+.navLinks a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.linksTop a {
+  color: #ccc;
+}
+
+.linksBottom a {
+  color: #858585;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  width: 996px;
+  margin: 0 auto 10px auto;
+}
+
+@media screen and (max-width: 996px) {
+  .footerBottom {
+    width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footerBottom {
+    width: 100%;
+    height: 160px;
+    flex-direction: column;
+    margin: 0 auto 20px 0;
+    padding-left: 20px;
+  }
+}
+
+.social {
+  display: flex;
+}
+
+.social p {
+  color: #ccc;
+}
+
+.socialIcons img {
+  width: 15px;
+  height: 15px;
+  margin: 0 6px;
+}
+
+@media screen and (max-width: 768px) {
+  .social {
+    flex-direction: column;
+  }
+
+  .socialIcons {
+    margin-top: 10px;
+    align-self: center;
+  }
+
+  .socialIcons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 6px;
+  }
+}
+
+.goPageTop a {
+  color: #fff;
+}
+.goPageTop a:hover {
+  text-decoration: none;
+}
+
+.goPageTop .arrow {
+  display: inline-block;
+  color: #000;
+  background-color: #fff;
+  border-radius: 7px;
+  width: 14px;
+  height: 14px;
+  margin: auto 0 auto 0;
+  padding: 1px 0 0 3px;
+  vertical-align: middle;
+}
+
+.copyright {
+  color: #858585;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.copyright img {
+  width: 55px;
+  height: 14px;
+}
+
+.copyright a {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* ---------------------------- */
+/* ------- Form Errors -------- */
+/* ---------------------------- */
+
+label.red {
+  color: red;
+  /* font-size: 1.1em; */
+}
+input.red {
+  border: 1px solid red;
+}
+
+span.error {
+  display: none;
+  color: #dd3232;
+  font-size: 12px;
+  width: 210px;
+  padding: 0 5px;
+  margin-top: 6px;
+  /* MODIFIED */
+  margin-left: 162px;
+}
+
+@media screen and (max-width: 996px) {
+  span.error {
+    margin-left: 35%;
+  }
+}
+
+span.display {
+  display: block;
+}
+
+#finalError {
+  width: auto;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+/* ---------------------------- */
+/* Input & Label Media Queries  */
+/* ---------------------------- */
+
+@media screen and (max-width: 768px) {
+  .inputRow {
+    position: relative;
+  }
+
+  .inputRow label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    transition: color 0.4s, top 0.4s, font-size 0.4s;
+  }
+
+  span.error {
+    margin-left: 0;
+  }
+
+  .inputRow input:focus + label,
+  .inputRow input:valid + label {
+    color: #986f38;
+    top: -10px;
+    font-size: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px 5px 0 5px;
+    font-size: 12px;
+  }
+
+  .membershipDetailsInner {
+    padding: 0;
+  }
+
+  .membershipRow {
+    display: initial;
+    /* align-items: center; */
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .membershipRow label {
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    width: auto;
+    transition: color 0.4s, top 0.4s, font-size 0.4s;
+  }
+
+  .membershipInputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .membershipInputContainer input:focus + label,
+  .membershipInputContainer input:valid + label {
+    color: #986f38;
+    top: 5px;
+    font-size: 10px;
+  }
+
+  .membershipRow a,
+  .membershipRow span.error {
+    margin-left: 10px;
+    padding: 0;
+  }
+
+  span.error {
+    width: auto;
+    margin-left: 0;
+  }
+}
