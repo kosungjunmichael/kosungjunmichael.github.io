@@ -1,0 +1,62 @@
+for (let coin of rawData.data) {
+        let row = document.createElement('tr');
+        let rank = document.createElement('td');
+        rank.textContent = coin.rank;
+        row.appendChild(rank);
+        
+        let name = document.createElement('td');
+        name.textContent = coin.name + " " + coin.symbol;
+        row.appendChild(name);
+
+        let price = document.createElement('td');
+        price.textContent = "$" + coin.price_usd;
+        row.appendChild(price);
+        
+        let hour = document.createElement('td');
+        if ( 0<coin.percent_change_1h) {
+          hour.style.color = 'green';
+          hour.textContent = "▲" + coin.percent_change_1h  
+        } else if ( 0>coin.percent_change_1h) {
+          hour.style.color = 'red';
+          hour.textContent = "▼" + coin.percent_change_1h
+        }
+        row.appendChild(hour);
+        
+        let day = document.createElement('td');
+        if ( 0<coin.percent_change_24h) {
+          day.style.color = 'green';
+          day.textContent = "▲" + coin.percent_change_24h  
+        } else if ( 0>coin.percent_change_24h) {
+          day.style.color = 'red';
+          day.textContent = "▼" + coin.percent_change_24h
+        }
+        row.appendChild(day);
+
+        let week = document.createElement('td');
+        if ( 0<coin.percent_change_7d) {
+          week.style.color = 'green';
+          week.textContent = "▲" + coin.percent_change_7d  
+        } else if ( 0>coin.percent_change_7d) {
+          week.style.color = 'red';
+          week.textContent = "▼" + coin.percent_change_7d
+        }
+        row.appendChild(week);
+        
+        let mark = document.createElement('td');
+        mark.textContent = "$" + coin.market_cap_usd;
+        row.appendChild(mark);
+        
+        let vol = document.createElement('td');
+        vol.textContent = coin.volume24;
+        row.appendChild(vol);
+        
+        let sup = document.createElement('td');
+        sup.textContent = coin.csupply + coin.symbol;
+        row.appendChild(sup);
+        
+        
+        
+
+        let table = document.querySelector('table');
+        table.appendChild(row);
+      }
